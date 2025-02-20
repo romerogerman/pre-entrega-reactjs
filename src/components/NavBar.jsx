@@ -1,9 +1,7 @@
 // src/components/NavBar.js
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
-import CartWidget from "./CartWidget"; // Make sure you have CartWidget.js
-
-import "./NavBar.css"; // Optionally add custom styles here
+import CartWidget from "./CartWidget";
+import { Navbar, Nav, Container } from "react-bootstrap"; // If using Bootstrap
 
 const NavBar = () => {
   return (
