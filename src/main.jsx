@@ -1,15 +1,16 @@
-// src/main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App"; // App.js is in the same src folder
-import "./index.css"; // Your main CSS
-import "bootstrap/dist/css/bootstrap.min.css"; // Make sure Bootstrap is installed
+import App from "./App";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const rootElement = document.getElementById("root");
-const root = ReactDOM.createRoot(rootElement);
+import { CartProvider } from "./context/CartContext"; // 👈 Importalo
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <CartProvider> {/* 👈 Envolvés toda la app con el proveedor */}
+      <App />
+    </CartProvider>
   </React.StrictMode>
 );
