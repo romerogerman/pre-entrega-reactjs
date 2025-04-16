@@ -1,21 +1,14 @@
-import React, { useState } from "react";
+// src/components/ItemQuantitySelector.jsx
+import React from "react";
 import { Button } from "@mui/material";
 
-const ItemQuantitySelector = ({ stock = 10, initial = 1, onQuantityChange }) => {
-  const [quantity, setQuantity] = useState(initial);
-
+const ItemQuantitySelector = ({ stock = 10, quantity, setQuantity }) => {
   const increase = () => {
-    if (quantity < stock) {
-      setQuantity(quantity + 1);
-      onQuantityChange(quantity + 1);
-    }
+    if (quantity < stock) setQuantity(quantity + 1);
   };
 
   const decrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-      onQuantityChange(quantity - 1);
-    }
+    if (quantity > 1) setQuantity(quantity - 1);
   };
 
   return (

@@ -25,6 +25,7 @@ function ResponsiveAppBar() {
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
+
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
@@ -46,7 +47,7 @@ function ResponsiveAppBar() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="#"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -74,7 +75,11 @@ function ResponsiveAppBar() {
                     </Box>
 
                     <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', gap: 2 }}>
-                        <CartWidget />
+                        {/* 🔗 Enlace al carrito */}
+                        <Link to="/cart" style={{ color: 'inherit' }}>
+                            <CartWidget />
+                        </Link>
+
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />

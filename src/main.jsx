@@ -4,13 +4,14 @@ import App from "./App";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { CartProvider } from "./context/CartContext"; // 👈 Importalo
+// ✅ Usamos el CartContext que está en components
+import CartContextProvider from "./components/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CartProvider> {/* 👈 Envolvés toda la app con el proveedor */}
+    <CartContextProvider> {/* ✅ Este es el correcto */}
       <App />
-    </CartProvider>
+    </CartContextProvider>
   </React.StrictMode>
 );
